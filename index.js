@@ -1,17 +1,5 @@
-/*
-$('.shopping-item-toggle').on('click', function () {
-   $('.shopping-item').addClass('shopping-item__checked');
-}
-)
-
-$('.shopping-item-delete').on('click', function() {
-    $('shopping-item').remove();
-    return ('The delete button ran!');
-}
-)*/
 function itemAdd() {
-    $('#js-shopping-list-form').on('submit', function(e) {
-       // when text is submitted then add it to the list//
+    $('#js-shopping-list-form').on('submit', function (e) {
         e.preventDefault();
 
         let item = $('#shopping-list-entry').val();
@@ -28,25 +16,25 @@ function itemAdd() {
                         </div>
                     </li>`;
 
-      $('.shopping-list').append(element);
+        $('.shopping-list').append(element);
 
-      $('#shopping-list-entry').val("");
+        $('#shopping-list-entry').val("");
 
     });
 }
 
 
 function checkButton() {
-    $('.shopping-item-toggle').on('click', function(b) {
+    $('.shopping-item-toggle').on('click', function (b) {
         b.preventDefault();
-        $(this).parent().siblings('span').addClass("shopping-item__checked");
-});
+        $(this).parent().siblings('span').toggleClass("shopping-item__checked");
+    });
 }
 
 function deleteButton() {
-    $('.shopping-item-delete').on('click', function() {
+    $('.shopping-item-delete').on('click', function () {
         $(this).parent().parent().remove();
-});
+    });
 }
 
 
