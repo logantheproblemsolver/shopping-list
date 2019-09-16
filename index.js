@@ -36,8 +36,25 @@ function itemAdd() {
 }
 
 
+function checkButton() {
+    $('.shopping-item-toggle').on('click', function(b) {
+        b.preventDefault();
+        $(this).parent().siblings('span').addClass("shopping-item__checked");
+});
+}
+
+function deleteButton() {
+    $('.shopping-item-delete').on('click', function() {
+        $(this).parent().parent().remove();
+});
+}
+
+
+
 function initialize() {
     itemAdd();
+    checkButton();
+    deleteButton();
 }
 
 $(initialize);
